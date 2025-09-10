@@ -48,13 +48,27 @@ public class PlayerMove : MonoBehaviour
 
         if (gameStart)
         {
-            if (mousePos.x > currentPos.x && goRight)
+            speed += acceleration * Time.deltaTime;
+            Debug.Log(speed);
+            speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
+            if (mousePos.x > (currentPos.x + 3.0f) && goRight)
             {
                 currentPos.x += speed * Time.deltaTime;
             }
-            if (mousePos.x < currentPos.x && goLeft)
+            if (mousePos.x < (currentPos.x - 3.0f) && goLeft)
             {
                 currentPos.x -= speed * Time.deltaTime;
+            }
+            if (transform.position != currentPos)
+            {
+                if (speed < maxSpeed)
+                {
+                    speed += acceleration;
+                }
+            }
+            else
+            {
+                speed = minSpeed;
             }
             transform.position = currentPos;
         }
@@ -76,8 +90,8 @@ public class PlayerMove : MonoBehaviour
 
         if (collision.CompareTag("Flower"))
         {
-            if(collision.gameObject.GetComponent<Flower>().didDing == false)
-            myCDPlayer.PlayOneShot(dingCD, 1.0f);
+            if (collision.gameObject.GetComponent<Flower>().didDing == false)
+                myCDPlayer.PlayOneShot(dingCD, 1.0f);
             collision.gameObject.GetComponent<Flower>().didDing = true;
             collision.gameObject.GetComponent<Animator>().SetBool("Bloom", true);
         }
