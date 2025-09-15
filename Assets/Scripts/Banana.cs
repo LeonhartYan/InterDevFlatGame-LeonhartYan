@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class People_Walk : MonoBehaviour
+public class Banana : MonoBehaviour
 {
-    public bool isPlayed = false;
+    public bool isTouched = false;
     float timer = 0.0f;
     public float waitTime = 2.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,15 +14,16 @@ public class People_Walk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0.2f, 0.0f, 0.0f) * Time.deltaTime;
-        if (isPlayed)
+        if (isTouched)
         {
+            GetComponent<AudioSource>().Play();
+            isTouched = false; 
             timer += Time.deltaTime;
-            if (timer >= waitTime)
+            if (timer >= waitTime) 
             {
                 timer = 0.0f;
-                isPlayed = false;
+                isTouched = false;
             }
-        }
+        }           
     }
 }

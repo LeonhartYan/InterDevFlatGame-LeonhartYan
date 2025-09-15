@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float minSpeed = 0.5f;
     public float maxSpeed = 5.0f;
 
-    public float acceleration = 0.1f;
+    public float acceleration = 0.05f;
     private GameObject enemyObj;
 
     string playerName = "Mario";
@@ -106,20 +106,29 @@ public class PlayerMove : MonoBehaviour
         }
         if (collision.CompareTag("people"))
         {
-            if (collision.gameObject.GetComponent<People>()!= null)
+            if (collision.gameObject.GetComponent<People>() != null)
             {
                 if (collision.gameObject.GetComponent<People>().isPlayed == false)
                 {
                     collision.gameObject.GetComponent<AudioSource>().Play();
                     collision.gameObject.GetComponent<People>().isPlayed = true;
                 }
-            }else if(collision.gameObject.GetComponent<People_Walk>()!= null)
+            }
+            else if (collision.gameObject.GetComponent<People_Walk>() != null)
             {
                 if (collision.gameObject.GetComponent<People_Walk>().isPlayed == false)
                 {
                     collision.gameObject.GetComponent<AudioSource>().Play();
                     collision.gameObject.GetComponent<People_Walk>().isPlayed = true;
                 }
+            }
+        }
+        if (collision.CompareTag("Banana"))
+        {
+            if (collision.gameObject.GetComponent<Banana>().isTouched == false)
+            {
+                collision.gameObject.GetComponent<Banana>().isTouched = true;
+                speed = minSpeed;
             }
         }
     }
