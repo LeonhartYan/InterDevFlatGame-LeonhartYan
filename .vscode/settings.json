@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "InterDevFlatGame-LeonhartYan.sln"
+    "dotnet.defaultSolution": "InterDevFlatGame.sln"
 }

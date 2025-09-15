@@ -7,12 +7,9 @@ public class PlayerMove : MonoBehaviour
     public float speed = 0f;
 
     public float minSpeed = 0.5f;
-    public float maxSpeed = 5.0f;
+    public float maxSpeed = 3.0f;
 
     public float acceleration = 0.05f;
-    private GameObject enemyObj;
-
-    string playerName = "Mario";
 
     List<int> scores;
 
@@ -101,7 +98,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Flower"))
         {
             if (collision.gameObject.GetComponent<Flower>().didDing == false)
-                collision.gameObject.GetComponent<AudioSource>().PlayOneShot(dingCD, 1.0f);
+                collision.gameObject.GetComponent<AudioSource>().Play();
             collision.gameObject.GetComponent<Flower>().didDing = true;
         }
         if (collision.CompareTag("people"))
@@ -123,13 +120,11 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
-        if (collision.CompareTag("Banana"))
+        if (collision.CompareTag("Banana") && collision.gameObject.GetComponent<Banana>().isTouched == false)
         {
-            if (collision.gameObject.GetComponent<Banana>().isTouched == false)
-            {
-                collision.gameObject.GetComponent<Banana>().isTouched = true;
-                speed = minSpeed;
-            }
+            collision.gameObject.GetComponent<Banana>().isTouched = true;
+            collision.gameObject.GetComponent<AudioSource>().Play();
+            speed = 2.0f;
         }
     }
 
