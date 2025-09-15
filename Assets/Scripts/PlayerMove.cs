@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float speed = 0.5f;
+    public float speed = 0f;
 
     public float minSpeed = 0.5f;
     public float maxSpeed = 5.0f;
@@ -28,17 +28,17 @@ public class PlayerMove : MonoBehaviour
     public AudioClip dingCD;
 
     char upKey = 'W';
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // speed = minSpeed;
+        speed = minSpeed;
         myCDPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameObject spr = transform.GetChild(0).gameObject;
         Vector3 currentPos = transform.position;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetKey(KeyCode.Space))
@@ -54,10 +54,14 @@ public class PlayerMove : MonoBehaviour
             if (mousePos.x > (currentPos.x + 3.0f) && goRight)
             {
                 currentPos.x += speed * Time.deltaTime;
+                spr.GetComponent<Animator>().SetBool("IsWalking", true);
+                spr.GetComponent<SpriteRenderer>().flipX = false;
             }
             if (mousePos.x < (currentPos.x - 3.0f) && goLeft)
             {
                 currentPos.x -= speed * Time.deltaTime;
+                spr.GetComponent<Animator>().SetBool("IsWalking", true);
+                spr.GetComponent<SpriteRenderer>().flipX = true;
             }
             if (transform.position != currentPos)
             {
@@ -69,6 +73,7 @@ public class PlayerMove : MonoBehaviour
             else
             {
                 speed = minSpeed;
+                spr.GetComponent<Animator>().SetBool("IsWalking", false);
             }
             transform.position = currentPos;
         }
