@@ -177,10 +177,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 195
-        height: 146
+        width: 250
+        height: 259
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,100 +197,12 @@ TextureImporter:
       name: paper_1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 146
-        width: 91
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 819ebc5fa7e2db200800000000000000
-      internalID: 197365064318839064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_2
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 109
-        width: 53
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f16ef10a83e34c90800000000000000
-      internalID: -7186650398474739211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_3
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 29
-        width: 143
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f734eba64ef342b0800000000000000
-      internalID: -5601353932033738763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_4
-      rect:
-        serializedVersion: 2
-        x: 307
-        y: 19
-        width: 126
-        height: 162
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 492a66a12973cb0d0800000000000000
-      internalID: -3405786117551250796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_5
-      rect:
-        serializedVersion: 2
         x: 313
-        y: 12
+        y: 8
         width: 272
-        height: 247
+        height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,59 +216,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paper_6
+      name: paper_2
       rect:
         serializedVersion: 2
-        x: 673
-        y: 60
-        width: 96
-        height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bed4a9eeb6ba00b60800000000000000
-      internalID: 7710351042111229419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_7
-      rect:
-        serializedVersion: 2
-        x: 726
-        y: 65
-        width: 80
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55ec8ccc1bbfc7780800000000000000
-      internalID: -8683789240413663659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_8
-      rect:
-        serializedVersion: 2
-        x: 739
+        x: 664
         y: 0
-        width: 186
+        width: 261
         height: 259
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -370,37 +238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paper_9
+      name: paper_3
       rect:
         serializedVersion: 2
-        x: 1043
-        y: 81
-        width: 82
-        height: 178
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fabe041ecc4b6c9b0800000000000000
-      internalID: -5060158339258717265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paper_10
-      rect:
-        serializedVersion: 2
-        x: 1044
+        x: 1033
         y: 0
-        width: 222
+        width: 233
         height: 257
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,33 +259,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: paper_11
-      rect:
-        serializedVersion: 2
-        x: 427
-        y: 0
-        width: 66
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c154b4f40feffbc60800000000000000
-      internalID: 7836262184723891484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 24285f77568a2484cafc0e53ceba8cca
     internalID: 0
     vertices: []
     indices: 
@@ -450,16 +274,13 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       paper_0: -1469909079130451432
-      paper_1: 197365064318839064
-      paper_10: -7616242876795138719
+      paper_1: -2338786835708944023
       paper_11: 7836262184723891484
-      paper_2: -7186650398474739211
-      paper_3: -5601353932033738763
+      paper_2: 2677215216797294159
+      paper_3: -7616242876795138719
       paper_4: -3405786117551250796
-      paper_5: -2338786835708944023
       paper_6: 7710351042111229419
       paper_7: -8683789240413663659
-      paper_8: 2677215216797294159
       paper_9: -5060158339258717265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

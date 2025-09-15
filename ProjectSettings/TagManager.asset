@@ -8,6 +8,8 @@ TagManager:
   - Right
   - Flower
   - PlayerSprite
+  - man
+  - people
   layers:
   - Default
   - TransparentFX

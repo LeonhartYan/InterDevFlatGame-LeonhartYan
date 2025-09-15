@@ -23,6 +23,8 @@ public class PlayerMove : MonoBehaviour
     bool goLeft = true;
     bool goRight = true;
 
+    bool footstepSoundPlaying = false;
+
     public AudioSource myCDPlayer;
 
     public AudioClip dingCD;
@@ -32,7 +34,6 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         speed = minSpeed;
-        myCDPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,7 +50,6 @@ public class PlayerMove : MonoBehaviour
         if (gameStart)
         {
             speed += acceleration * Time.deltaTime;
-            Debug.Log(speed);
             speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
             if (mousePos.x > (currentPos.x + 3.0f) && goRight)
             {
@@ -65,6 +65,11 @@ public class PlayerMove : MonoBehaviour
             }
             if (transform.position != currentPos)
             {
+                if (!footstepSoundPlaying)
+                {
+                    spr.GetComponent<AudioSource>().Play();
+                    footstepSoundPlaying = true;
+                }
                 if (speed < maxSpeed)
                 {
                     speed += acceleration;
@@ -74,6 +79,8 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = minSpeed;
                 spr.GetComponent<Animator>().SetBool("IsWalking", false);
+                spr.GetComponent<AudioSource>().Stop();
+                footstepSoundPlaying = false;
             }
             transform.position = currentPos;
         }
@@ -84,21 +91,36 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Left"))
         {
             goLeft = false;
-            Debug.Log("Left Collision Detected");
         }
 
         if (collision.CompareTag("Right"))
         {
             goRight = false;
-            Debug.Log("Right Collision Detected");
         }
 
         if (collision.CompareTag("Flower"))
         {
             if (collision.gameObject.GetComponent<Flower>().didDing == false)
-                myCDPlayer.PlayOneShot(dingCD, 1.0f);
+                collision.gameObject.GetComponent<AudioSource>().PlayOneShot(dingCD, 1.0f);
             collision.gameObject.GetComponent<Flower>().didDing = true;
-            collision.gameObject.GetComponent<Animator>().SetBool("Bloom", true);
+        }
+        if (collision.CompareTag("people"))
+        {
+            if (collision.gameObject.GetComponent<People>()!= null)
+            {
+                if (collision.gameObject.GetComponent<People>().isPlayed == false)
+                {
+                    collision.gameObject.GetComponent<AudioSource>().Play();
+                    collision.gameObject.GetComponent<People>().isPlayed = true;
+                }
+            }else if(collision.gameObject.GetComponent<People_Walk>()!= null)
+            {
+                if (collision.gameObject.GetComponent<People_Walk>().isPlayed == false)
+                {
+                    collision.gameObject.GetComponent<AudioSource>().Play();
+                    collision.gameObject.GetComponent<People_Walk>().isPlayed = true;
+                }
+            }
         }
     }
 
@@ -107,12 +129,10 @@ public class PlayerMove : MonoBehaviour
         if (collision.CompareTag("Left"))
         {
             goLeft = true;
-            Debug.Log("Left Collision Exited");
         }
         if (collision.CompareTag("Right"))
         {
             goRight = true;
-            Debug.Log("Right Collision Exited");
         }
     }
 }
